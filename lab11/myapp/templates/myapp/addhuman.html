@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>add human</title>
+    </head>
+    <body>
+        <h1>Add human</h1>
+        <form method="POST" action="/createhuman/">
+            {% csrf_token %}
+            {{hum_form}}
+            <input type="submit" />
+        </form>
+    </body>
+</html>

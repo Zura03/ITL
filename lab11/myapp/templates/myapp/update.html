@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>updated humans</title>
+    </head>
+    <body>
+        <h1>Humans</h1>
+        <br><br>
+        <select name="human_id">
+            {% for hum in humans %}
+            <option value="{{ hum.fname }}">{{ hum.fname }}</option>
+            {% endfor %}
+        </select>
+    </body>
+</html>
