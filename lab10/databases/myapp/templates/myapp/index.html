@@ -1,0 +1,28 @@
+<html>
+<head><title>django page</title></head>
+
+<body>
+    <form action="createpage/" method="POST">
+        {% csrf_token %}
+        <table>{{ cat_form }}</table><br />
+        <table>{{ page_form}}</table><br />
+        <input type="submit" />
+    </form>
+    <hr />
+    {% for category in categories %}
+    <p>{{category.index}}</p>
+    <h2>{{category.name}}</h2>
+    <p>visits: {{category.visits}}</p>
+    <p>likes: {{category.likes}}</p>
+    <hr />
+    {% endfor %}
+    <br />
+    {% for page in pages %}
+    <p>{{page.index}}</p>
+    <h2>{{page.title}}</h2>
+    <p>{{page.category}}</p>
+    <p>views: {{page.views}}</p>
+    <hr />
+    {% endfor %}
+</body>
+</html>

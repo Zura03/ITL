@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      div {
+        background-color: lightblue;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+      }
+    </style>
+    <script language="javascript">
+      function check(form) {
+        if (form.userId.value == "zura" && form.pwsrd.value == "003") {
+          window.open("https://www.google.com", "_blank");
+        }
+        else {
+          alert("Error incorrect username or password");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Login Credentials</h1>
+      <form name="login">
+        <label for="userid">UserID:</label>
+        <input type="text" id="userid" name="userId">
+        <label for="pwsrd">Password:</label>
+        <input type="password" id="pwsrd" name="pwsrd">
+        <input type="button" onclick="check(this.form)" value="Login">
+        <input type="reset" value="cancel">
+      </form>
+    </div>
+  </body>
+</html>

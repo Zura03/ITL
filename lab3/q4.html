@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>color-box</title>
+    <style>
+      div {
+        width: 500px;
+        height: 500px;
+      }
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <input type="radio" id="red" name="color" value="red">
+    <label for="red">Red</label>
+    <input type="radio" id="green" name="color" value="green">
+    <label for="green">Green</label>
+    <input type="radio" id="Blue" name="color" value="blue">
+    <label for="Blue">Blue</label>
+    <button onclick="changeColor()">Change Color</button>
+    <div id="colorbox"></div>
+  </body>
+  <script>
+    function changeColor() {
+      var color = document.querySelector("input[name='color']:checked").value;
+      var colorbox = document.getElementById("colorbox");
+      colorbox.classList.add(color);
+    }
+  </script>
+</html>

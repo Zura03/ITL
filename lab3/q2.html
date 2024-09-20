@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      margin:0;
+      padding:0;
+    }
+
+    #greeting {
+      font-size: 24px;
+      margin: 20px;
+    }
+
+    #clock {
+      font-size: 36px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="greeting"></div>
+  <div id="clock"></div>
+
+  <script>
+    var currentTime = new Date().getHours();
+    function getGreeting() {
+      if (currentTime > 5 && currentTime < 12) {
+        return "Good Morning";
+      }
+      else if (currentTime >=12 && currentTime < 18) {
+        return "Good Afternoon";
+      }
+      else {
+        return "Good Evening";
+      }
+    }
+
+    function updateClock() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      hours = (hours < 10) ? "0" + hours : hours;
+      minutes = (minutes < 10) ? "0" + minutes : minutes;
+      seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+      var timeString = hours + ":" + minutes + ":" + seconds;
+      document.getElementById("clock").textContent = timeString;
+      setTimeout(updateClock, 1000);
+    }
+    document.getElementById("greeting").textContent = getGreeting();
+    updateClock();
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>django</title>
+    </head>
+    <body>
+        <form action="add/" method="POST">
+            {{emp_form}}
+            <input type="submit" />
+        </form>
+
+        {% for emp in emps %}
+        <h2>{{emp.name}}</h2>
+        <p>company name: {{emp.company_name}}</p>
+        <p>salary: {{emp.salary}}</p>
+        <p>street: {{emp.street}}</p>
+        <p>city: {{emp.city}}</p>
+        {% endfor %}
+    </body>
+</html>

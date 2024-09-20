@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>online Quiz</title>
+    <style>
+      body {
+        font-family: Times, serif;
+      }
+
+      #quiz-container {
+        max-width: 600px;
+        margin: auto;
+        background-color: beige;
+      }
+
+      .question {
+        margin-bottom: 20px;
+      }
+
+      .options {
+        margin-bottom: 10px;
+      }
+
+      #result {
+        font-weight: bold;
+        margin-top: 20px;
+        color:brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="quiz-container">
+      <div class="question" id="question-1">
+        <p>who is the best driver in f1</p>
+        <ul class="options">
+          <li><input type="radio" name="q1" value="max">DUDUDUDU</li>
+          <li><input type="radio" name="q1" value="lewis">lewis</li>
+        </ul>
+      </div>
+      <button onclick="submitQuiz()">Submit</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function submitQuiz() {
+        var score=0;
+
+        var q1Answer = document.querySelector("input[name='q1']:checked");
+        if (q1Answer) {
+          if (q1Answer.value == "max") {
+            score++;
+          }
+        }
+
+        var resultElement = document.getElementById("result");
+        resultElement.textContent =  "MAX VERSTAPPEN";
+      }
+    </script>
+  </body>
+</html>

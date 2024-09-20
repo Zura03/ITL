@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Birthday Card</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+      #details {
+        float: left;
+        background-color: lightblue;
+      }
+      #card {
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+        float: right;
+      }
+
+      img {
+        justify-content: center;
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="details">
+        <label for="bgcolor">Choose a background color:</label><br>
+        <select id="bgcolor" name="bgcolor">
+          <option id="yellow" value="yellow">Yellow</option>
+          <option id="orange" value="orange">Orange</option>
+          <option id="pink" value="pink">Pink</option>
+          <option id="lightblue" value="lightblue">Light Blue</option>
+        </select><br>
+
+        <label for="f">Choose a font: </label><br>
+        <select id="f" name="f">
+          <option value="Times">Times</option>
+          <option value="Verdana">Verdana</option>
+          <option value="monospace">monospace</option>
+
+        </select><br>
+
+        <label for="fs">Specify a numeric font size</label><br>
+        <input type="number" name="fs" id="fs"><br>
+
+        <label for="bs">Choose a border style:</label><br>
+        <input type="radio" name="bs" value="none"><label>none</label><br>
+        <input type="radio" name="bs" value="double"><label>Double</label><br>
+        <input type="radio" name="bs" value="solid"><label>Solid</label><br>
+
+        <input type="checkbox" name="pic"><label>Add the Default Picture</label><br>
+
+        <label for="txtarea">Enter the greeting text below:</label><br>
+        <textarea id="txtarea" name="txtarea" rows="5" columns="29"></textarea><br>
+
+        <button onclick="updateCard()">Update</button>
+      </div>
+      <div id="card">
+        <p id="cardContent"></p>
+        <img id="birthday-image">
+      </div>
+    </div>
+    <script>
+      function updateCard() {
+        var bgcolor = $('#bgcolor').val();
+        $('#card').css("background-color", bgcolor);
+
+        var font = $('#f').val();
+        $('#cardContent').css('font-family', font);
+
+        var fontSize = $('#fs').val();
+        $('#cardContent').css('font-size', fontSize + 'px');
+
+        var borderStyle = $("input[name=bs]:checked").val();
+        $('#card').css('border-style', borderStyle);
+
+        if ($("input[name=pic]:checked")) {
+          $('#birthday-image').replaceWith("<img src='https://picsum.photos/seed/picsum/200/300'>")
+        }
+
+        var txt = $('#txtarea').val();
+        $('#cardContent').text(txt);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table td#india {
+                background-color: yellow;
+            }
+
+            table tr #population{
+                background-color: skyblue;
+            }
+            table td:nth-child(2){
+                background-color: green;
+            }
+            table tr:nth-child(2){
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1 solid black">
+            <tr bgcolor="red">
+                <th>Country</th>
+                <th colspan="2">Population in crores</th>
+            </tr>
+            <tr>
+                <td rowspan="3", id="india">India</td>
+                <td id="population">1998</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td id="population">1999</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>2000</td>
+                <td>100</td>
+            </tr>
+        </table>
+    </body>
+</html>

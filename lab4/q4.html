@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bill</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Bill</h1>
+    <form id="billform">
+      <label for="device">Choose a device: </label>
+      <select id="device">
+        <option value="HP">HP</option>
+        <option value="Nokia">Nokia</option>
+      </select>
+      <br>
+      <label for="type">Choose a type:</label>
+      <label for="mobile">Mobile</label>
+      <input type="checkbox" id="mobile" name="type" value="mobile">
+      <label for="laptop">Laptop</label>
+      <input type="checkbox" id="laptop" name="type" value="laptop"><br>
+      <label for="quantity">Quantity</label>
+      <input type="text" id="quantity"><br>
+      <button id="produceBill">Produce Bill</button>
+    </form>
+    <script>
+      var prices = {
+        HP: {mobile:100, laptop:150},
+        Nokia: {mobile:80, laptop: 120}
+      };
+
+      $('#produceBill').click(function () {
+        var device = $('#device').val();
+        var type = $("input[name='type']:checked").val();
+        var quantity = parseInt($('#quantity').val());
+
+        if (!type) {
+          alert("please choose a type");
+          return;
+        }
+
+        var price=prices[device][type];
+        var total = price*quantity;
+
+        alert("Total amount: $"+total);
+      })
+    </script>
+  </body>
+</html>

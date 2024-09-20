@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>font</title>
+    <style>
+      p {
+        font-size: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="f">FONT+++</p>
+  </body>
+  <script>
+    function fon() {   
+      var par = document.getElementById("f");
+      var size = par.style.fontSize;
+
+      var interval = setInterval(function() {
+        if (size < 40) {
+          size += 2;
+          par.style.fontSize = size + "px";
+          par.style.color = "red";
+        } else {
+          clearInterval(interval);
+          size = 5;
+          par.style.fontSize = size + "px";
+          par.style.color = "blue";
+          par.textContent = "FONT---";
+        }
+      }, 200);
+    }
+
+  fon()
+  </script>
+</html>

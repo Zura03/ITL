@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grade</title>
+  </head>
+  <body>
+      <label for="sub1">sub1</label>
+      <input type="number" id="sub1" name="sub1" min="0" max="100" required>
+      <label for="sub2">sub2</label>
+      <input type="number" id="sub2" name="sub2" min="0" max="100" required>
+      <label for="sub3">sub3</label>
+      <input type="number" id="sub3" name="sub3" min="0" max="100" required>
+      <label for="sub4">sub4</label>
+      <input type="number" id="sub4" name="sub4" min="0" max="100" required>
+      <button onclick="calcGrade()">Grade</button>
+    <p id="result"></p>
+
+    <script>
+      function calcGrade() {
+        var sub1 = parseFloat(document.getElementById("sub1").value);
+        var sub2 = parseFloat(document.getElementById("sub2").value);
+        var sub3 = parseFloat(document.getElementById("sub3").value);
+        var sub4 = parseFloat(document.getElementById("sub4").value);
+
+        var avg = (sub1 + sub2 + sub3 + sub4)/4;
+
+        var grade = "";
+        
+        if (avg > 90) {
+          grade = "A";
+        }
+        else if (avg > 80 && avg <=90){
+          grade = "B";
+        }
+        else if (avg > 70 && avg <=80){
+          grade = "C";
+        }
+        else {
+          grade = "D";
+        }
+        document.getElementById("result").textContent = "Grade: " + grade;
+      }
+    </script>
+  </body>
+</html>

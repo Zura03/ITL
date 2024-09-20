@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      #container {
+        float:right;
+      }
+      button {
+        display: block;
+        clear: both;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button id="moveleft">moveleft</button>
+    <div id="container">
+      <table>
+        <tr>
+          <td>Director</td>
+          <td>Movie</td>
+          <td>Verdict</td>
+        </tr>
+        <tr>
+          <td>Guruji</td>
+          <td>GK</td>
+          <td>hit</td>
+        </tr>
+      </table>
+      <img src="https://picsum.photos/200/300">
+    </div>
+  <script>
+    $("#moveleft").click(function () {
+      $("table, img").animate({
+        marginLeft: "-=300px"}, "slow");
+    });
+  </script>
+  </body>
+</html>

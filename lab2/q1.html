@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+       div {
+        background-color: antiquewhite;
+       }
+
+       form {
+        background-color: #f1b2b2;
+       }
+
+       input[type=text], select {
+        width:100%;
+       }
+    </style>
+
+  </head>
+
+  <body>
+    <h2>Student Bio Data</h2>
+    <div>
+      <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" placeholder="Enter your first name..">
+
+        <br>
+        <label>Gender:</label>
+        <label for="male"><input type="radio" id="male" name="gender" value="male">Male</label>
+        <label for="female"><input type="radio" id="female" name="gender" value="female">Female</label>
+        <br>
+        <br>
+
+        <label for="branch">Branch</label>
+        <select id="branch" name="branch">
+          <option value="cse">cse</option>
+          <option value="mech">mech</option>
+        </select>
+        <br><br>
+
+        <label>Subjects:</label>
+        <table>
+          <tr>
+            <td>
+              <input type="checkbox" id="it" name="subjects" value="it">IT
+            </td>
+            <td>
+              <input type="checkbox" id="bda" name="subjects" value="bda">BDA
+            </td>
+          </tr>
+        </table>
+
+        <br>
+        <input type="submit" value="submit">
+      </form>
+    </div>
+  </body>
+</html>
